@@ -44,8 +44,9 @@ class DevOpsReactions(BotPlugin):
 
         if results:
             item = random.choice(results)
-            return self.send_card(msg.frm,
-                           in_reply_to=msg,
-                           image=item.get('src'))
+            return item.get('src')
+#             return self.send_card(msg.frm,
+#                            in_reply_to=msg,
+#                            image=item.get('src'))
         else:
             return 'No results found.'
