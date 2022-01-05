@@ -44,11 +44,8 @@ class DevOpsReactions(BotPlugin):
 
         if results:
             item = random.choice(results)
-            self.send_card(to=self.Room,
+            self.send_card(to=self.build_identifier('Room'),
                            in_reply_to=msg,
                            image=item.get('src'))
         else:
-            self.send(self.roomOccupant,
-                      'No results found.',
-                      in_reply_to=msg,
-                      groupchat_nick_reply=True)
+            return 'No results found.'
