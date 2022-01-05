@@ -44,10 +44,9 @@ class DevOpsReactions(BotPlugin):
 
         if results:
             item = random.choice(results)
-            self.send_card('*Here you gif:*',
-                       msg.frm,
-                       in_reply_to=msg,
-                       image=item.get('src'))
+            self.send_card(to=msg.frm,
+                           in_reply_to=msg,
+                           image=item.get('src'))
         else:
             self.send(msg.frm,
                       'No results found.',
