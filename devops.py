@@ -37,7 +37,7 @@ class DevOpsReactions(BotPlugin):
 
         if r.ok:
             dom = PyQuery(r.content)
-            results = dom('div[class=post_title] a')
+            results = dom('div[class=post_title] img')
             self.log.debug('results found: {}'.format(len(results)))
         else:
             results = []
@@ -47,7 +47,7 @@ class DevOpsReactions(BotPlugin):
             self.send_card('*Here you gif:*',
                        msg.frm,
                        in_reply_to=msg,
-                       image=item.get('href'))
+                       image=item.get('src'))
         else:
             self.send(msg.frm,
                       'No results found.',
