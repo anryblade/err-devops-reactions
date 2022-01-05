@@ -44,12 +44,14 @@ class DevOpsReactions(BotPlugin):
 
         if results:
             item = random.choice(results)
-            img = item.get('href')
-            response = img
+            self.send_card('*Here you gif:*',
+                       msg.frm,
+                       in_reply_to=msg,
+                       image=item.get('href'))
         else:
-            response = 'No results found.'
-
-        self.send(msg.frm,
-                  response,
-                  in_reply_to=msg,
-                  groupchat_nick_reply=True)
+            self.send(msg.frm,
+                      'No results found.',
+                      in_reply_to=msg,
+                      groupchat_nick_reply=True)
+            
+        
