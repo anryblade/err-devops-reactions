@@ -37,7 +37,7 @@ class DevOpsReactions(BotPlugin):
 
         if r.ok:
             dom = PyQuery(r.content)
-            results = dom('div[class=post_title] img')
+            results = dom('figure[class=tmblr-full] img')
             self.log.debug('results found: {}'.format(len(results)))
         else:
             results = []
@@ -53,5 +53,3 @@ class DevOpsReactions(BotPlugin):
                       'No results found.',
                       in_reply_to=msg,
                       groupchat_nick_reply=True)
-            
-        
