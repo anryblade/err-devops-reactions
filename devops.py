@@ -44,7 +44,7 @@ class DevOpsReactions(BotPlugin):
 
         if results:
             item = random.choice(results)
-            self.send_card(to=self.build_identifier('Room'),
+            self.send_card(msg.frm,
                            in_reply_to=msg,
                            image=item.get('src'))
         else:
