@@ -25,7 +25,7 @@ class DevOpsReactions(BotPlugin):
         !devops
         """
 
-        base = 'http://devopsreactions.tumblr.com/'
+        base = 'https://devopsreactions.tumblr.com/'
         if args:
             q = urlencode({'q': args})
             path = '?' + q
